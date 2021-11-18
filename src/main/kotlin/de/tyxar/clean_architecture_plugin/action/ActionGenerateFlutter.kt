@@ -48,36 +48,36 @@ class ActionGenerateFlutter : AnAction() {
                 val mapOrFalse = Generator.createFolder(
                     project, folder,
                     "data",
-                    "repositories"
+                    "repository"
                 ) ?: return@runWriteCommandAction
                 mapOrFalse["data"]?.let { data: VirtualFile ->
                     Generator.createFolder(
                         project, data,
                         "local",
-                        "models", "data_sources"
+                        "model", "data_sources"
                     )
                     Generator.createFolder(
                         project, data,
                         "remote",
-                        "models", "data_sources"
+                        "model", "data_sources"
                     )
                 }
             } else {
                 Generator.createFolder(
                     project, folder,
                     "data",
-                    "repositories", "data_sources", "models"
+                    "repository", "endpoint", "model"
                 )
             }
             Generator.createFolder(
                 project, folder,
                 "domain",
-                "repositories", "use_cases", "entities"
+                "repository", "controller"
             )
             Generator.createFolder(
                 project, folder,
                 "presentation",
-                "manager", "pages", "widgets"
+                "bloc", "pages", "widget"
             )
         }
     }
