@@ -1,4 +1,5 @@
 plugins {
+    id 'java'
     id 'org.jetbrains.intellij' version '1.3.0'
     id 'org.jetbrains.kotlin.jvm' version '1.5.10'
 }
@@ -12,6 +13,8 @@ repositories {
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib"
+    implementation "com.fleshgrinder.kotlin:case-format:0.2.0"
+
 }
 
 // See https://github.com/JetBrains/gradle-intellij-plugin/

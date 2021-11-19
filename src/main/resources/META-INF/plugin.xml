@@ -1,5 +1,5 @@
 <idea-plugin>
-    <id>de.tyxar.clean_architecture_plugin</id>
+    <id>com.flutter.clean_architecture_plugin</id>
     <name>Clean Architecture for Flutter</name>
     <vendor email="arne@rantzen.net" url="http://rantzen.net">Tyx</vendor>
 
@@ -13,6 +13,7 @@
     <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
          on how to target different products -->
     <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.lang</depends>
 
     <actions>
         <group class="com.flutter.clean_architecture_plugin.action.ActionGroup"
@@ -26,5 +27,34 @@
                     id="com.flutter.clean_architecture_plugin.action.ActionGenerateFlutter"
                     text="Flutter"/>
         </group>
+
+        <action class="com.flutter.clean_architecture_plugin.action.GenerateCubitAction"
+                description="Generate a new Cubit"
+                id="GenerateCubitId"
+                icon="/icons/cubit.png"
+                text="Cubit Class">
+            <add-to-group
+                    group-id="NewGroup"
+                    anchor="first"/>
+        </action>
+        <action class="com.flutter.clean_architecture_plugin.action.GenerateBlocAction"
+                description="Generate a new Bloc"
+                id="GenerateBlocId"
+                icon="/icons/bloc.png"
+                text="Bloc Class">
+            <add-to-group
+                    group-id="NewGroup"
+                    anchor="first"/>
+        </action>
+        <action class="com.flutter.clean_architecture_plugin.action.GenerateEquatablePropsAction"
+                description="Generate Equatable Props Override"
+                id="GenerateEquatablePropsId"
+                text="Equatable Props">
+            <add-to-group group-id="GenerateGroup"
+                          anchor="last"/>
+        </action>
     </actions>
+
+
+
 </idea-plugin>
